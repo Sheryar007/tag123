@@ -3,10 +3,7 @@
 //$username="root";
 //$password="";
 //for postgre Sql
-//$servername="ec2-54-235-168-152.compute-1.amazonaws.com";
-//$username="zeagzynnmsyqqs";
-//$password="wp_7Mj4TISB_AcF4wX2107o9Nb";
-//$dbname = "df2ujmjcsek4ru";
+
 if(isset($_POST["tgname"]) && isset($_POST["tgloc"])&& isset($_POST["encoded_string"]))
 {
 	

@@ -3,7 +3,8 @@ $servername = "localhost";
 $user_name = "root";
 $password="";
 
-
+echo "show page MISSING";
+exit;
 $con= mysqli_connect($servername,$user_name,$password);
 		mysqli_select_db( $con ,"Webservice");
 		if($con->connect_error)

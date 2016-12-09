@@ -8,6 +8,7 @@ $con= mysqli_connect($servername,$user_name,$password);
 		mysqli_select_db( $con ,"Webservice");
 		if($con->connect_error)
 		{
+			
 			die("connection:failed:".$con->connect_error);
 		}
 		$result = mysqli_query($con,"SELECT * FROM tag");

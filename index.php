@@ -1,12 +1,12 @@
 <?php 
-//$servername="localhost";
-//$username="root";
-//$password="";
+$servername="localhost";
+$username="root";
+$password="";
 //for postgre Sql
-$servername="ec2-54-235-168-152.compute-1.amazonaws.com";
-$username="zeagzynnmsyqqs";
-$password="wp_7Mj4TISB_AcF4wX2107o9Nb";
-$dbname = "df2ujmjcsek4ru";
+//$servername="ec2-54-235-168-152.compute-1.amazonaws.com";
+//$username="zeagzynnmsyqqs";
+//$password="wp_7Mj4TISB_AcF4wX2107o9Nb";
+//$dbname = "df2ujmjcsek4ru";
 if(isset($_POST["tgname"]) && isset($_POST["tgloc"])&& isset($_POST["encoded_string"]))
 {
 	
@@ -21,14 +21,14 @@ if(isset($_POST["tgname"]) && isset($_POST["tgloc"])&& isset($_POST["encoded_str
 	$is_written = fwrite($file,$decoded_string);
 	fclose($file);
 
-	//$con= mysqli_connect($servername,$username,$password);
-	$con = pg_connect($servername,$dbname,$username,$password);
-	or die("Can't connect to database".pg_last_error());
-	//mysqli_select_db( $con ,"Webservice");
-	//if($con->connect_error)
-	//{
-	//	die("connection:failed:".$con->connect_error);
-	//}
+	$con= mysqli_connect($servername,$username,$password);
+	//$con = pg_connect($servername,$dbname,$username,$password);
+	//or die("Can't connect to database".pg_last_error());
+	mysqli_select_db( $con ,"Webservice");
+	if($con->connect_error)
+	{
+		die("connection:failed:".$con->connect_error);
+	}
 	$var = mysqli_query($con,"INSERT INTO tag(tgname, tgloc,name,path) VALUES
 								(
 								'".$name."',
